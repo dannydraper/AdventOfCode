@@ -88,6 +88,7 @@ class Day5 {
         for seedRange in AllSeedRanges {
             print ("Processing Range: \(seedRange)")
             var seedStart = seedRange.start
+            var counter = 0
             
             for _ in 0..<seedRange.length {
                 var seed = seedStart
@@ -118,6 +119,12 @@ class Day5 {
                 }
                 
                 seedStart+=1
+                counter += 1
+                
+                if (counter > 100000) {
+                    counter = 0
+                    print ("Processing seedStart: \(seedStart) of \(seedRange.start + seedRange.length) Remaining: \((seedRange.start + seedRange.length) - seedStart)")
+                }
             }
                     
         }
